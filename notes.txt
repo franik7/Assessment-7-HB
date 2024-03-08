@@ -1,0 +1,37 @@
+Timing Information:
+-------------------
+
+Extra Large Array
+-----------------
+Time to run code with push(): 2.0891 ms
+Time to run code with unshift(): 535.9078 ms
+
+Large Array
+-----------
+Time to run code with push(): 422.3 μs
+Time to run code with unshift(): 4.9971 ms
+
+Medium Array
+------------
+Time to run code with push(): 95.8 μs
+Time to run code with unshift(): 104.6 μs
+
+Small Array
+-----------
+Time to run code with push(): 74.3 μs
+Time to run code with unshift(): 29.8 μs
+
+Tiny Array
+----------
+Time to run code with push(): 62.1 μs
+Time to run code with unshift(): 19.3 μs
+
+
+How does each function “scale”? Which of the two functions scales better? How can you tell?
+
+In small arrays it does not really matter and, in fact, in some instances for a Tiny Array and Small Array, the unshift is actually quicker than push, however as number of elements in array increases, it is evident than push is much quicker than unshift because the time to complete the unshift function gets proportionately larger than the time to complete the push function wit hthe growth of the array (number of elements in the array increases). It appears that push scales much better than unshift because it does not have to move other array elements.
+
+
+For extra credit, do some review / research on why the slower function is so slow, and summarize the reasoning for this.
+
+Because Push just adds an element to the end of the array without affecting other elements in the array (O1 scaling) while unshift (O2 scaling) has to move other array elements and then add itself to the beginning of the array. Much better scaling for push makes sense since we can always add an elements to the end of the array and we don't need to know its length whereas with unshift, we have to move every single element of the array which can be cumbersome depenending on the array length and only then we can insert a new element to the beginning of the array. 
